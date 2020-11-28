@@ -62,3 +62,7 @@ func TestQuickSortV2(t *testing.T) {
 func TestQuickSortV3(t *testing.T) {
 	testSortInts(t, 500000, 1000, 10000, QuickSortV3)
 }
+
+func TestHeapSort(t *testing.T) {
+	testSortInts(t, 500000, 1000, 10000, HeapSort)
+}
