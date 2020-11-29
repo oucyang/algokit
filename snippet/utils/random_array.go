@@ -2,6 +2,14 @@ package utils
 
 import "math/rand"
 
+func RandomString(maxLen int, minChar, maxChar rune) string {
+	var runes = make([]rune, rand.Intn(maxLen+1))
+	for i := 0; i < len(runes); i++ {
+		runes[i] = rune(rand.Intn(int(maxChar-minChar)+1) + int(minChar))
+	}
+	return string(runes)
+}
+
 func RandomIntArray(maxSize int, maxValue int) []int {
 	if maxValue < 0 {
 		maxValue = -maxValue
