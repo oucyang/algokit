@@ -10,12 +10,25 @@ func RandomString(maxLen int, minChar, maxChar rune) string {
 	return string(runes)
 }
 
-func RandomIntArray(maxSize int, maxValue int) []int {
+func RandomPositiveIntArray(maxLen, maxValue int) []int {
+	if maxValue < 0 {
+		maxValue = -maxValue
+	}
+	length := rand.Intn(maxLen + 1)
+	arr := make([]int, length)
+	maxValue += 1
+	for i := 0; i < length; i++ {
+		arr[i] = rand.Intn(maxValue)
+	}
+	return arr
+}
+
+func RandomIntArray(maxLen int, maxValue int) []int {
 	if maxValue < 0 {
 		maxValue = -maxValue
 	}
 	double := maxValue * 2
-	arrLen := rand.Intn(maxSize + 1)
+	arrLen := rand.Intn(maxLen + 1)
 	var arr = make([]int, arrLen)
 	for i := 0; i < arrLen; i++ {
 		arr[i] = rand.Intn(double) - maxValue
