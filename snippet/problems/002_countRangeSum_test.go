@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-var slowWay = func(nums []int, lower, upper int) int {
+var countRangeSumSlowWay = func(nums []int, lower, upper int) int {
 	var ans = 0
 	for i := 0; i < len(nums); i++ {
 		sum := nums[i]
@@ -41,7 +41,7 @@ func randomCountRangeSumCase(maxSize, maxValue int) *CountRangeSumCase {
 	if lower > upper {
 		lower, upper = upper, lower
 	}
-	answer := slowWay(nums, lower, upper)
+	answer := countRangeSumSlowWay(nums, lower, upper)
 	return &CountRangeSumCase{
 		Lower:  lower,
 		Upper:  upper,
