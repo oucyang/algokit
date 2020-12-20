@@ -59,7 +59,6 @@ func (tt *TrieTree1) Insert(word string) {
 		index := tt.indexOfChar(r)
 		if node.nexts[index] == nil {
 			node.nexts[index] = newTrieNode1(tt.pathSize)
-			return
 		}
 		node = node.nexts[index]
 		node.pass++
